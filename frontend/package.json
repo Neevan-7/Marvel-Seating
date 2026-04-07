@@ -1,6 +1,7 @@
 {
   "name": "marvel-seating-frontend",
   "version": "1.0.0",
+  "homepage": "https://neevan-7.github.io/Marvel-Seating", 
   "private": true,
   "type": "module",
   "scripts": {
