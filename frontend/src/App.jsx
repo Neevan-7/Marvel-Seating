@@ -28,7 +28,7 @@ import ProtectedRoute from './components/admin/ProtectedRoute';
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/Marvel-Seating/">
         <Toaster
           position="top-right"
           toastOptions={{
