@@ -30,11 +30,6 @@ app.use('/api/testimonials', require('./routes/testimonials'));
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/admin', require('./routes/admin'));
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Marvel Seating API running', timestamp: new Date() });
-});
-
 // Seed route (for development/testing only)
 app.get("/api/seed", async (req, res) => {
   try {
@@ -46,6 +41,12 @@ app.get("/api/seed", async (req, res) => {
     res.status(500).send(err.message);
   }
 });
+
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Marvel Seating API running', timestamp: new Date() });
+});
+
 
 // 404 handler
 app.use((req, res) => {
