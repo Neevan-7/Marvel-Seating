@@ -258,10 +258,12 @@ const seed = async () => {
   }
 
   console.log('✅ Database seeded successfully!');
-  process.exit(0);
+  // process.exit(0);
 };
 
-seed().catch(err => {
-  console.error('❌ Seed failed:', err);
-  process.exit(1);
-});
+// seed().catch(err => {
+//   console.error('❌ Seed failed:', err);
+//   process.exit(1);
+// });
+
+module.exports = seed;
