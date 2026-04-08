@@ -1,10 +1,10 @@
-require('dotenv').config();
+//require('dotenv').config();
 const mongoose = require('mongoose');
 const Product = require('../models/Product');
 const { Category, Work, Testimonial, Admin } = require('../models');
 
 const seed = async () => {
-  await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/marvel_seating');
+  //await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/marvel_seating');
   console.log('Connected to MongoDB');
 
   // Clear existing
