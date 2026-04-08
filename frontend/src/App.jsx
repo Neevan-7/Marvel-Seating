@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+//import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 
@@ -28,7 +29,7 @@ import ProtectedRoute from './components/admin/ProtectedRoute';
 export default function App() {
   return (
     <AuthProvider>
-      <Router basename="/Marvel-Seating/">
+      <Router>
         <Toaster
           position="top-right"
           toastOptions={{
