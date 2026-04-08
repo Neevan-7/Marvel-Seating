@@ -8,7 +8,11 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://yoursite.com' : 'http://localhost:5173',
+   origin: [
+    "http://localhost:5173",
+    "https://neevan-7.github.io"
+  ],
+ // origin: process.env.NODE_ENV === 'production' ? 'https://yoursite.com' : 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
@@ -29,6 +33,18 @@ app.use('/api/admin', require('./routes/admin'));
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Marvel Seating API running', timestamp: new Date() });
+});
+
+// Seed route (for development/testing only)
+app.get("/api/seed", async (req, res) => {
+  try {
+    const seed = require("./scripts/seed");
+    await seed();
+    res.send("Database seeded!");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err.message);
+  }
 });
 
 // 404 handler
